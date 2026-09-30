@@ -5,6 +5,7 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
@@ -19,10 +20,12 @@ jobs:
           distribution: 'temurin'
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.14.5'
 
       - name: Build with Gradle
-        run: ./gradlew shadowJar
+        run: gradle shadowJar
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
