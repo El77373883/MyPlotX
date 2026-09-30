@@ -1,0 +1,17 @@
+name: MyPlotX
+version: '${version}'
+main: com.tuNombre.MyPlotX.MyPlotX
+api-version: '1.21'
+authors: [TuNombre]
+description: Un plugin de parcelas para Paper con soporte Bedrock.
+softdepend: [Vault, floodgate]
+
+commands:
+  plotadmin:
+    description: Comando de administración de parcelas.
+    usage: /plotadmin create plotworld [nombre]
+    permission: myplotx.admin
+  plot:
+    description: Comando principal para jugadores.
+    aliases: [p, plots]
+    usage: /plot <claim|auto|home|list|sell|buy|add|remove|help>
